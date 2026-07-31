@@ -1,0 +1,628 @@
+/*
+Theme Name: "Olimp 5 clinic"
+Version: 1.0
+Description: Тема для сайта Olimp5.ru
+Author: RB
+*/
+
+/*новости*/
+
+
+.rb-programms__category{
+   margin-top: 30px;
+   margin-bottom: 40px;
+}
+.rb-programms__category li a{
+   margin-right: 16px;
+   border: 1px solid rgba(18, 18, 18, 0.2);
+	border-radius: 12px;
+	padding: 8px 16px;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+.rb-programms__category li a:hover,
+.rb-programms__category li.rb-programms__curr,
+.rb-programms__category li a.active {
+	background: #F3951D;
+	border: 1px solid rgba(18, 18, 18, 0.2);
+	transition: all 0.3s;
+	color: #fff;
+}
+.rb-programms__category li:last-child {
+   margin-right: 0px;
+}
+.rb-programms__category li a {
+	text-decoration: none;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	color: #1B1B1B;
+	transition: all 0.3s;
+}
+
+.rb-programms.rb-page {
+	padding-bottom: 0;
+}
+.rb-news-item{
+	width: calc( 50% - 10px );
+	background: #F4F4F8;
+	border: 1px solid rgba(18, 18, 18, 0.1);
+	border-radius: 12px;
+	margin-bottom: 30px;
+}
+.rb-news-item:nth-child(2n){
+	margin-left: 10px;
+}
+.rb-news-item:nth-child(2n-1){
+	margin-right: 10px;
+}
+.rb-news-item-img a{
+	display: block;
+	height: 100%;
+}
+.rb-news-item-img img{
+	border-radius: 0 12px 12px 0;
+	height: 100%;
+	object-fit: cover;
+}
+.rb-news-list .rb-news-item .rb-news-item-info{
+	padding: 24px 32px 88px;
+	position: relative;
+}
+.rb-news-item-date{
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 160%;
+	color: #A0A0A0;
+	margin-bottom: 10px;
+	display: block;
+}
+.rb-news-item-title{
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 140%;
+	color: #42567D;
+	margin: 0;
+	margin-bottom: 16px;
+}
+.rb-news-item-subtitle,
+.rb-news-item-text{
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 160%;
+	color: #121212;
+	margin-bottom: 16px;
+	padding-bottom: 0;
+}
+.rb-news-item-text span{
+	margin-bottom: 6px;
+	display: block;
+	color: #121212;
+}
+.rb-news-item-text{
+	color: #717171;
+}
+.rb-news-item-text ul{
+	padding-left: 16px;
+}
+.rb-news-item-text ul li{
+	list-style: disc;
+}
+.rb-news-item-picture{
+	height: 100%;
+	display: block;
+}
+.rb-news-item-bot{
+	align-items: center;
+	justify-content: space-between;
+    position: absolute;
+    bottom: 24px;
+    width: calc( 100% - 64px );
+}
+
+@media screen and (max-width:1320px) {
+	.rb-news-list .rb-news-item{
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.rb-news-item .rb-news-item-link{
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 120%;
+		height: 40px;
+		padding: 10px 16px;
+	}
+/*	.rb-news-item-picture{
+		height: 380px;
+		display: block;
+	}*/
+}
+@media screen and (max-width:767px) {
+	.rb-programms__category{
+		overflow-x: scroll;
+	}
+	.rb-programms__category li{
+		white-space: nowrap;
+	}
+	.rb-news-item-img img{
+		border-radius:  0 0 12px 12px;
+	}
+}
+
+.rb-accordion {
+  margin-bottom: 50px;
+}
+
+.rb-accordion__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #121212;
+}
+
+.rb-accordion-item.active .rb-accordion__label p {
+  color: #42567d;
+  font-size: 24px;
+}
+
+.rb-plus {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+  background-color: #f3951d;
+}
+
+.rb-plus span {
+  width: 16px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  left: 6px;
+  top: 13px;
+}
+
+.rb-plus span:last-child {
+  transform: rotate(90deg);
+}
+
+.rb-accordion__label {
+  padding: 16px;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.rb-accordion-item {
+  border-bottom: 1px solid hsl(220deg 31% 37% / 20%);
+}
+
+.rb-accordion-item:first-child {
+  border-top: 1px solid hsl(220deg 31% 37% / 20%);
+}
+
+.rb-accordion__content {
+  max-width: 1000px;
+  width: 100%;
+  padding-left: 16px;
+  padding-bottom: 16px;
+}
+
+.rb-accordion__content p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #121212;
+  opacity: 0.8;
+}
+
+.rb-accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.rb-accordion__content p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.rb-accordion-item.active .rb-accordion__content {
+  max-height: 500px;
+  padding: 15px 20px;
+}
+
+.rb-accordion-item.active .rb-plus span:last-child {
+  display: none;
+}
+
+.rb-accordion__label p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  font-weight: 500;
+  font-size: 20px;
+  text-align: left;
+  color: #121212;
+}
+
+.sl-swiper-pop {
+  overflow: hidden;
+}
+
+.sl-swiper-pop .rb-service__item {
+  width: 100%;
+}
+
+.sl-swiper-pop .swiper-wrapper {
+  height: auto;
+}
+
+@media (max-width: 650px) {
+  .rb-accordion__label p {
+    font-size: 18px;
+  }
+
+  .rb-accordion__label {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .rb-accordion__content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .rb-plus {
+    width: 20px;
+    height: 20px;
+  }
+
+  .rb-plus span {
+    width: 14px;
+    left: 3px;
+    top: 10px;
+  }
+
+  .rb-accordion-item.active .rb-accordion__label p {
+    font-size: 18px;
+  }
+}
+
+.rb-accordion-qe {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rb-accordion-qe .rb-accordion-item {
+  background: #f4f4f8;
+  border-radius: 12px;
+  border: none;
+}
+
+.rb-accordion-qe .rb-accordion__content {
+  max-width: 100%;
+  padding-top: 0 !important;
+}
+
+.rb-accordion-qe .rb-accordion-item.active .rb-accordion__label p {
+  font-size: 20px;
+}
+.rb-accordion-qe .rb-accordion-item .rb-accordion__label p {
+  color: #42567d;
+}
+
+.rb-accordion-qe .rb-accordion-item .rb-accordion__label .rb-arrow {
+  transform: rotate(180deg);
+}
+
+.rb-accordion-qe
+  .rb-accordion-item.active
+  .rb-accordion__label
+  .rb-arrow {
+  transform: rotate(0deg);
+}
+.rb-accordion-qe .rb-accordion__label {
+  padding-right: 20px;
+}
+
+@media (max-width: 650px) {
+  .rb-accordion-qe .rb-accordion-item.active .rb-accordion__label p {
+    font-size: 18px;
+  }
+
+  .rb-accordion-qe .rb-accordion__label {
+    padding-left: 16px;
+  }
+
+  .rb-accordion-qe .rb-accordion__content {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+.feedback-swiper .swiper-wrapper {
+  height: auto !important;
+}
+
+.sl-swiper-spec .rb-button__orange {
+  display: block;
+}
+
+.sl-swiper-spec .rb-doctors__spec-item--wrap {
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.sl-swiper-spec .rb-doctors__spec-info {
+  padding-bottom: 0 !important;
+}
+
+.sl-swiper-spec {
+  overflow: hidden;
+}
+.sl-swiper-spec .swiper-wrapper {
+  height: auto !important;
+}
+
+.feedback__label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #121212;
+  margin-bottom: 20px;
+}
+
+.feedback-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.feedback__col {
+  min-height: 69px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.feedback__button span {
+  margin: 0;
+  display: block;
+}
+
+.feedback-img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.feedback-item {
+  box-shadow: 0 0 12px 0 rgba(155, 157, 157, 0.25);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.feedback-swiper .swiper-wrapper {
+  padding: 11px 0;
+}
+
+.feedback-img img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.feedback-wrapper {
+  overflow: hidden;
+  padding: 0 11px;
+}
+
+.feedback__title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #121212;
+  opacity: 0.6;
+}
+
+.feedback-widget {
+  border-radius: 4px;
+  padding: 2px 10px;
+  display: inline-flex;
+  background: #f2f9f1;
+}
+
+.feedback__wrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 7px;
+}
+
+.feedback-widget span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  color: #7dc073;
+  opacity: 0.8;
+}
+
+.feedback-asc {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #121212;
+  opacity: 0.4;
+  max-width: 400px;
+  width: 100%;
+}
+
+.feedback-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feedback-block .rb-page-header h2 {
+  margin: 0;
+}
+
+.feedback-arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feedback-arrows a {
+  text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+  .feedback-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .feedback-content .feedback__button {
+    width: 100%;
+  }
+
+  .feedback-content .feedback__button .rb-button__orange {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .feedback__wrap {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .feedback-wrapper {
+    padding: 0 5px;
+  }
+
+  .feedback-block .rb-page-header h2 {
+    font-size: 24px;
+  }
+}
+
+.rb-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(66, 86, 125, 0.2);
+  margin-bottom: 80px;
+}
+
+.rb-links a {
+  text-decoration: none;
+  transition: all 0.4s ease;
+
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #42567d;
+}
+.rb-links a:hover {
+  color: #f3951d;
+}
+
+.feedback-wrapper {
+  margin-bottom: 50px;
+}
+
+.feedback-block {
+  margin-bottom: 30px;
+}
+
+.sl-swiper-serv {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.sl-swiper-serv .rb-service__item {
+  width: 100%;
+}
+
+.sl-swiper-serv .swiper-wrapper {
+  height: auto;
+}
+
+.sl-swiper-spec {
+  margin-bottom: 40px;
+}
+
+.table-button-width {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.table-button-width {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-button-width .rb-button__orange-bg {
+  text-decoration: none;
+  display: block;
+  margin: 0;
+}
+
+.ondoc-s-btn-0 {
+  padding: 0 10px !important;
+  margin-top: 2px !important;
+}
+.ondoc-s-btn-0 svg {
+  margin: 0 !important;
+}
+
+@media (max-width: 990px) {
+  .rb-links {
+    flex-wrap: wrap;
+    gap: 8px;
+    border: none;
+    margin-bottom: 40px;
+  }
+
+  .rb-links a {
+    background: #f4f4f8;
+    border-radius: 10px;
+    padding: 8px 12px;
+    line-height: 1;
+    font-size: 16px;
+  }
+}

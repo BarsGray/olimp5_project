@@ -1,0 +1,48 @@
+         <div id="hero__slider" class="slider">
+            .slider__numbers
+               .slider__current_index
+               .slider__devider /
+               .slider__total
+
+            <div class="slider__wrapper">
+               <div class="slider__items">
+                  <div class="slider__item hero__item hero__item--bg" style="background-image: url('/assets/img/sliders/test2.jpg')">
+                     .container.fullwidth.no_padding.h100
+                        .grid-12-noGutter.h100
+                           .col-6_md-hidden
+                           .col-1_xxl-7_xxxl-8
+                           .col-3_md-12_xxl-3_xxxl-2.h100
+                              .hero__info
+                                 .hero__slide--title Программы
+                                 .hero__slide--anons
+                                    p экспресс перезагрузка 3 дня
+                                 a(href="", class="hero__slide--button centered")  Показать еще
+                           .col-2_md-hidden
+                  </div>
+
+                  <div class="slider__item hero__item">
+                     +i('sliders/2.jpg')
+                  </div>
+
+                  <div class="slider__item hero__item">
+                     +i('sliders/3.jpg')
+                  </div>
+
+                  <div class="slider__item hero__item">
+                     +i('sliders/4.jpg')
+                  </div>
+
+                  <div class="slider__item hero__item">
+                     +i('sliders/5.jpg')
+                  </div>
+
+                  <div class="slider__item hero__item">
+                     +i('sliders/6.jpg')
+                  </div>
+
+               </div>
+            </div>
+            <!-- Стрелки для перехода к предыдущему и следующему слайду -->
+            <a class="slider__control slider__control_prev" href="#" role="button" data-slide="prev"></a>
+            <a class="slider__control slider__control_next" href="#" role="button" data-slide="next"></a>
+         </div>

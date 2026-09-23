@@ -1259,21 +1259,28 @@
 
 
     $('.rb-service__all--btn span').click(function(){
-
         $('.rb-service__list-2').addClass('rb-service__list-show');
         $(this).parent().hide();
-
+    });
+    
+    $('.rb-header__menu-list li.menu-item-type-custom > a').click(function(e) {
+        const $li = $(this).parent();
+        if ($li.hasClass('menu-item-has-children')) {
+            e.preventDefault();
+            if (!$li.hasClass('rb-open-sub-menu')) {
+                $('.rb-header__menu-list li.menu-item-type-custom').removeClass('rb-open-sub-menu');
+            }
+            $li.toggleClass('rb-open-sub-menu');
+        }
     });
 
-    $('.rb-header__menu-list li.menu-item-type-custom').click( function(){
-
-        $(this).toggleClass('rb-open-sub-menu');
-
-    } );
+    $('.rb-header__menu-list li.menu-item-has-children > ul.sub-menu').each(function () {
+        const count = $(this).children('li').length;
+        $(this).toggleClass('two_colums', count > 6);
+    });
 
 
     $('body').on('click', '.rb-programms_cat--item', function(){
-
         const catID = $(this).data('termid');
 
         $('.rb-programms_cat--item.rb-programms__curr').removeClass('rb-programms__curr');
@@ -1285,7 +1292,6 @@
     });
 
     $('body').on( 'click', '.rb-programms__more>span', function(){
-
         $(this).parent().parent().find('.rb-programms__list.rb-programms__list--hide').removeClass('rb-programms__list--hide ');
         $(this).hide();
 

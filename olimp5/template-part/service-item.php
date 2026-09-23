@@ -8,7 +8,8 @@ $rb_services_price_hide = get_post_meta($service_id, '_rb_services_price_hide', 
 $price = get_post_meta($service_id, '_rb_services_price', true);
 $title = get_the_title($service_id);
 $permalink = get_permalink($service_id);
-$content = apply_filters('the_content', get_post_field('post_content', $service_id));
+$content = 	$rb_services_desc = get_post_meta( $service_id, '_rb_services_brief_desc', true );
+// $content = apply_filters('the_content', get_post_field('post_content', $service_id));
 ?>
     <a href="<?php echo esc_url($permalink); ?>" class="rb-service__item-title">
 <li class="rb-service__item">

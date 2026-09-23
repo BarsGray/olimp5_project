@@ -263,6 +263,9 @@ add_action('admin_enqueue_scripts', function ($hook) {
     if (!isset($_GET['page']) || !in_array($_GET['page'], ['olimp-search','olimp-search-synonyms','olimp-search-log'], true)) return;
     wp_enqueue_script('jquery');
     wp_enqueue_script('jquery-ui-sortable');
+    // wp_register_script('jquery-ui-sortable-cdn','https://code.jquery.com/ui/1.13.2/jquery-ui.min.js',['jquery'], '1.13.2',true );
+    // wp_enqueue_script('jquery-ui-sortable-cdn');
+    // wp_enqueue_style('jquery-ui-base','https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css',[],'1.13.2');
     $inline = 'jQuery(function($){ if ($.fn.sortable){ $("#post-type-priority").sortable({update:function(){var a=[];$("#post-type-priority .pt-item").each(function(){a.push($(this).data("pt"))});$("#post_type_priority_input").val(a.join(","));}});} });';
 
     wp_add_inline_script('jquery-ui-sortable', $inline);

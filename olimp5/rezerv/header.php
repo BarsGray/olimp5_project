@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php //=LANGUAGE_ID?>" lang="<?php //=LANGUAGE_ID?>" class="no-js">
 	<head>
+
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MF5TM82M');</script>
+		<!-- End Google Tag Manager -->
+
 		<meta name="facebook-domain-verification" content="9zfo8jz6k8vd82fpvzfmew8w5df4nx" />
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +22,7 @@
 		<meta name="yandex-verification" content="83be9db0bcd51674" />
 		<meta name="google-site-verification" content="t3eSiB6qVJN4Oy_mi1ZmiekzmRBatdk4aeYQwTSsVno" />
 		<title><?php echo wp_get_document_title(); ?></title>
-<!-- <link href="https://cdn.jsdelivr.net/gh/oathanrex/font-awesome-pro@main/fontawesome-pro-6.5.2-web/css/all.min.css" rel="stylesheet"> -->
+<link href="https://cdn.jsdelivr.net/gh/oathanrex/font-awesome-pro@main/fontawesome-pro-6.5.2-web/css/all.min.css" rel="stylesheet">
 
 		<?php wp_head(); ?>
 
@@ -643,6 +652,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	</head>
 
 	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF5TM82M"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<?php
 			if( function_exists( 'carbon_get_theme_option' ) ){
 				$logo = carbon_get_theme_option( 'logo' );

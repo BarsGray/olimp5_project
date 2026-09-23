@@ -746,6 +746,7 @@ Container::make( 'post_meta', 'О нас' )
             Field::make( 'checkbox', 'rb_services_price_hide', 'Скрыть цену на карточке услуги?' )
                 ->set_width(50),
             Field::make( 'rich_text', 'rb_services_desc', 'Описание' ),
+            Field::make( 'rich_text', 'rb_services_brief_desc', 'Краткое описание в карточке' ),
             Field::make( 'text', 'rb_services_price', 'Цена' ),
             Field::make( 'text', 'rb_services_code', 'Код' ),
             Field::make( 'text', 'rb_services_prev_price', 'Предыдущая цена' ),

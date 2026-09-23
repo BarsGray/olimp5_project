@@ -489,15 +489,15 @@ update_option('olimp_search_post_type_priority', $priority);
 
     <script>
     jQuery(document).ready(function($) {
-        if (typeof $.fn.sortable === 'undefined') {
-            console.warn('jQuery UI Sortable not available. Loading from CDN...');
-            $('<link>').attr('rel','stylesheet').attr('href','https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css').appendTo('head');
-            $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function() {
-                initSortable();
-            });
-        } else {
-            initSortable();
-        }
+        // if (typeof $.fn.sortable === 'undefined') {
+        //     console.warn('jQuery UI Sortable not available. Loading from CDN...');
+        //     $('<link>').attr('rel','stylesheet').attr('href','https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css').appendTo('head');
+        //     $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function() {
+        //         initSortable();
+        //     });
+        // } else {
+        //     initSortable();
+        // }
         function initSortable() {
             $('#post-type-priority').sortable({
                 handle: '.dashicons-move',

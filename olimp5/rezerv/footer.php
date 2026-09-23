@@ -508,54 +508,81 @@
             </div>
          </div>
       </div>
-       
-      <script type="text/javascript">
-      window.analyticsInitialized = false;
-      function startAllAnalytics() {
-         if (window.analyticsInitialized) return;
-         window.analyticsInitialized = true;
-         initYyMetrika();
-         calltouch();
-         topMailRuCounter();
-      }
-      function checkExistingConsent() {if (document.cookie.indexOf('cookieyes-consent') !== -1 && document.cookie.indexOf('analytics:yes') !== -1) startAllAnalytics();}
-      // Yandex.Metrika
-      function initYyMetrika() {
+
+      <!-- Yandex.Metrika counter -->
+      <!-- <script type="text/javascript" >
          (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
          m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
          (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+         ym(84731377, "init", {
+              clickmap:true,
+              trackLinks:true,
+              accurateTrackBounce:true,
+              webvisor:true
+         });
+      </script>
+      <script>
+      document.addEventListener('click', function(e) {
+         if (e.target.closest('.ondoc-s-btn.ondoc-s-btn-0')) {
+            ym(84731377, 'reachGoal', 'online_booking_click');
+         }
+      });
+      </script>
+      <noscript><div><img src="https://mc.yandex.ru/watch/84731377" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
+      <!-- /Yandex.Metrika counter -->
+
+      <!-- Yandex.Metrika -->
+      <script type="text/javascript">
+      function initMyMetrika() {
+         if (window.ymInitialized) return;
+         window.ymInitialized = true;
+
+         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+         (window, document, "script", "https://yandex.ru", "ym");
          ym(84731377, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+
          document.addEventListener('click', function(e) {if (e.target.closest('.ondoc-s-btn.ondoc-s-btn-0')) ym(84731377, 'reachGoal', 'online_booking_click');});
       }
-      // calltouch
-      function calltouch() {
-         (function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)},m=typeof Array.prototype.find === 'function',n=m?"init-min.js":"init.js";s.type="text/javascript";s.async=true;s.src="https://mod.calltouch.ru/"+n+"?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","meuj0n6v");
-      }
-      // Top.Mail.Ru counter
-      function topMailRuCounter() {
-         var _tmr = window._tmr || (window._tmr = []);
-         _tmr.push({id: "3383184", type: "pageView", start: (new Date()).getTime()});
-         (function (d, w, id) {
-         if (d.getElementById(id)) return;
-         var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-         ts.src = "https://top-fwz1.mail.ru/js/code.js";
-         var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-         if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-         })(document, window, "tmr-code");
-      }
+
       document.addEventListener('cookieyes_banner_load', function(eventData) {
          var data = eventData.detail;
-         if (data && data.categories && data.categories.analytics) startAllAnalytics();
+         if (data && data.categories && data.categories.analytics) initMyMetrika();
       });
+
       document.addEventListener("cookieyes_consent_update", function (eventData) {
          var data = eventData.detail;
-         if (data && data.accepted && data.accepted.includes("analytics")) startAllAnalytics();
+         if (data && data.accepted && data.accepted.includes("analytics")) initMyMetrika();
       });
-      checkExistingConsent();
       </script>
-      <noscript><div><img src="https://mc.yandex.ru/watch/84731377" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-      <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3383184;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
 
+      <noscript><div><img src="https://yandex.ru" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+      <!-- /Yandex.Metrika counter -->
+
+
+
+
+      <!-- calltouch -->
+      <script type="text/javascript">
+      (function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)},m=typeof Array.prototype.find === 'function',n=m?"init-min.js":"init.js";s.type="text/javascript";s.async=true;s.src="https://mod.calltouch.ru/"+n+"?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","meuj0n6v");
+      </script>
+      <!-- calltouch -->
+
+      <!-- Top.Mail.Ru counter -->
+      <script type="text/javascript">
+      var _tmr = window._tmr || (window._tmr = []);
+      _tmr.push({id: "3383184", type: "pageView", start: (new Date()).getTime()});
+      (function (d, w, id) {
+        if (d.getElementById(id)) return;
+        var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+        ts.src = "https://top-fwz1.mail.ru/js/code.js";
+        var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+        if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+      })(document, window, "tmr-code");
+      </script>
+      <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3383184;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+      <!-- /Top.Mail.Ru counter -->
 <script>
 
 (function() {

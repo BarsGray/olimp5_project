@@ -41,7 +41,7 @@
 				<?php
 					$doc_id_lk = carbon_get_post_meta(get_the_ID(), 'rb_doc_id_lk');
 					$order_btn_params = 'data-doctors="' . get_the_title() . '" data-programms="" data-service="" data-servicestax=""';
-					if ($doc_id_lk) {$order_btn_params = "onclick=\"event.preventDefault(); ym(84731377, 'reachGoal', 'doctor_booking_click'); ONDOC.showModal('/booking-appointment?doctor=" . $doc_id_lk . "')\"";}
+					if ($doc_id_lk) {$order_btn_params = "onclick=\"event.preventDefault(); if(window.analyticsInitialized && typeof ym === 'function') { ym(84731377, 'reachGoal', 'doctor_booking_click'); } ONDOC.showModal('/booking-appointment?doctor=" . $doc_id_lk . "');\"";}
 				?>
 					<span class="rb-button__orange-full rb-doctors-page__btn<?php echo $doc_id_lk ? ' ' : ' js-open-modal ' ?>doctor2"<?php echo $order_btn_params; ?>>Записаться на прием</span>
 				<?php //endif; ?>
@@ -193,7 +193,7 @@
 			<?php
 				$doc_id_lk = carbon_get_post_meta(get_the_ID(), 'rb_doc_id_lk');
 				$order_btn_params = 'data-doctors="' . get_the_title() . '" data-programms="" data-service="" data-servicestax=""';
-				if ($doc_id_lk) {$order_btn_params = "onclick=\"event.preventDefault(); ym(84731377, 'reachGoal', 'doctor_booking_click'); ONDOC.showModal('/booking-appointment?doctor=" . $doc_id_lk . "')\"";}
+				if ($doc_id_lk) {$order_btn_params = "onclick=\"event.preventDefault(); if(window.analyticsInitialized && typeof ym === 'function') { ym(84731377, 'reachGoal', 'doctor_booking_click'); } ONDOC.showModal('/booking-appointment?doctor=" . $doc_id_lk . "');\"";}
 			?>
 			<span class="rb-pricelist__item-btn rb-button__orange-full rb-doctors-page__btn<?php echo $doc_id_lk ? ' ' : ' js-open-modal ' ?>doctor2"<?php echo $order_btn_params; ?>>Записаться</span>
 		</div>
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
 												<?php
 													$doc_id_lk = carbon_get_post_meta(get_the_ID(), 'rb_doc_id_lk');
 													$order_btn_params = 'data-doctors="' . get_the_title() . '" data-programms="" data-service="" data-servicestax=""';
-													if ($doc_id_lk) {$order_btn_params = "onclick=\"event.preventDefault(); ym(84731377, 'reachGoal', 'doctor_booking_click'); ONDOC.showModal('/booking-appointment?doctor=" . $doc_id_lk . "')\"";}
+													if ($doc_id_lk) {$order_btn_params = "onclick=\"event.preventDefault(); if(window.analyticsInitialized && typeof ym === 'function') { ym(84731377, 'reachGoal', 'doctor_booking_click'); } ONDOC.showModal('/booking-appointment?doctor=" . $doc_id_lk . "');\"";}
 												?>
 													<span class="rb-button__orange-full rb-doctors-page__btn<?php echo $doc_id_lk ? ' ' : ' js-open-modal ' ?>doctor2"<?php echo $order_btn_params; ?>>Записаться</span>
 											</li>

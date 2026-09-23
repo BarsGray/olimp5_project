@@ -1,0 +1,5 @@
+.fancybox__container {z-index: 10500;}
+.rew_and_info {margin: 120px 0;}
+.grecaptcha-badge {display: none !important;}
+@media (max-width: 1320px) {.rew_and_info {margin: 80px 0;}}
+@media (max-width: 767px) {.rew_and_info {margin: 48px 0;}}

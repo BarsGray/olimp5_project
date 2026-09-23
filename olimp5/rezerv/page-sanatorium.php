@@ -252,7 +252,7 @@ $programms_list = get_posts(
 
 <!-- <input id="checkout"  class="easepick__input" name="dates2" readonly /> -->
 
-                            <!-- <script src="https://cdn.jsdelivr.net/npm/@easepick/datetime@1.2.0/dist/index.umd.min.js">
+                            <script src="https://cdn.jsdelivr.net/npm/@easepick/datetime@1.2.0/dist/index.umd.min.js">
                             </script>
                             <script src="https://cdn.jsdelivr.net/npm/@easepick/core@1.2.0/dist/index.umd.min.js">
                             </script>
@@ -346,7 +346,7 @@ $programms_list = get_posts(
 
                             // 	}
                             // }
-                            </script> -->
+                            </script>
 
                             <style>
                             .easepick__input {

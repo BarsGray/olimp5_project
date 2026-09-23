@@ -504,112 +504,37 @@ function rb_popup_form(){
 
     $msg = $_POST[ 'message' ] ? $_POST[ 'message' ] : '';
 
-    if ( $msg ) {
-        wp_die( 'Недопустимые данные! Попробуйте снова' );
-    }
+    if ( $msg ) {wp_die( 'Недопустимые данные! Попробуйте снова' );}
 
-    if ( ! $phone  )  {
-        $error = 'Пожалуйста заполните поле с телефоном.';
-    }
-    if ( ! $name  )  {
-        $error = 'Пожалуйста укажите имя.';
-    }
-    // if ( ! $user_msg  )  {
-    //     $error = 'Пожалуйста укажите сообщение.';
-    // }
-
+    if ( ! $phone  )  {$error = 'Пожалуйста заполните поле с телефоном.';}
+    if ( ! $name  )  {$error = 'Пожалуйста укажите имя.';}
+    // if ( ! $user_msg  )  { $error = 'Пожалуйста укажите сообщение.'; }
     if ( ! $name && ! $phone )  {
         $error = 'Пожалуйста заполните поле имя и телефон.';
     }
-    // if ( ! $name && ! $user_msg )  {
-    //     $error = 'Пожалуйста заполните поле имя и сообщение.';
-    // }
-    // if ( ! $name && ! $phone && ! $user_msg )  {
-    //     $error = 'Пожалуйста заполните все поля.';
-    // }
-
+    // if ( ! $name && ! $user_msg )  {$error = 'Пожалуйста заполните поле имя и сообщение.';}
+    // if ( ! $name && ! $phone && ! $user_msg )  {$error = 'Пожалуйста заполните все поля.';}
     if ( $error ) {
-
         $form_array[ 'result' ] = 'error';
         $form_array[ 'content' ] = $error;
-
         echo json_encode( $form_array );
-
     } else {
-
         $msg = "
             <h2>Сообщение с сайта olimp5.ru</h2>
-
-            <p>
-              <strong>Имя: </strong> {$name}
-            </p>
-            <p>
-              <strong>Телефон: </strong> {$phone}
-            </p>
-            <p>
-              <strong>Сообщение: </strong> {$user_msg}
-            </p>
-            <p>
-              <strong>Страница сайта, с которой отправили заявку: </strong> {$curr_url}
-            </p>
+            <p><strong>Имя: </strong> {$name}</p>
+            <p><strong>Телефон: </strong> {$phone}</p>
+            <p><strong>Сообщение: </strong> {$user_msg}</p>
+            <p><strong>Страница сайта, с которой отправили заявку: </strong> {$curr_url}</p>
             ";
-
-        if ( $user_service ) {
-
-          $msg .= "
-                <p>
-                  <strong>Услуга, на которую планируется запись: </strong> {$user_service}
-                </p>
-                ";
-
-        }
-
-        if ( $user_servicestax ) {
-
-          $msg .= "
-                <p>
-                  <strong>Направление, на которое планируется запись: </strong> {$user_servicestax}
-                </p>
-                ";
-
-        }
-
-        if ( $user_doctors ) {
-
-          $msg .= "
-                <p>
-                  <strong>Врач, к которому планируется запись: </strong> {$user_doctors}
-                </p>
-                ";
-
-        }
-
-        if ( $user_programms ) {
-
-          $msg .= "
-                <p>
-                  <strong>Программа, на которую планируется запись: </strong> {$user_programms}
-                </p>
-                ";
-
-        }
-
-        if ( $center_name ) {
-
-          $msg .= "
-                <p>
-                  <strong>Центр в который хотят записаться: </strong> {$center_name}
-                </p>
-                ";
-
-        }
+        if ( $user_service ) {$msg .= "<p><strong>Услуга, на которую планируется запись: </strong> {$user_service}</p>";}
+        if ( $user_servicestax ) {$msg .= "<p><strong>Направление, на которое планируется запись: </strong> {$user_servicestax}</p>";}
+        if ( $user_doctors ) {$msg .= "<p><strong>Врач, к которому планируется запись: </strong> {$user_doctors}</p>";}
+        if ( $user_programms ) {$msg .= "<p><strong>Программа, на которую планируется запись: </strong> {$user_programms}</p>";}
+        if ( $center_name ) {$msg .= "<p><strong>Центр в который хотят записаться: </strong> {$center_name}</p>";}
 
         if( function_exists( 'carbon_get_theme_option' ) ){
-
           $emails = carbon_get_theme_option( 'emails' ) ? explode( ',', carbon_get_theme_option( 'emails' )  ) : get_option( 'admin_email' );
-
         }
-
         // $emails = get_option( 'admin_email' );
         // $emails = 'burtnek.roman@yandex.ru';
         $site_url = site_url();
@@ -625,30 +550,18 @@ function rb_popup_form(){
             'Return-Path: <no-reply@'. $url .'>',
             'MIME-Version: 1.0',
         );
-
         $mail = wp_mail( $emails, "Новое сообщение с сайта", $msg, $headers );
-
         if( $mail ){
-
             $form_array[ 'result' ] = 'success';
             $form_array[ 'content' ] = 'Сообщение успешно отправлено.';
-
             echo json_encode( $form_array );
-
         } else {
-
             $error = 'Сообщение не удалось отправить.';
-
             $form_array[ 'result' ] = 'error';
             $form_array[ 'content' ] = $error;
-
             echo json_encode( $form_array );
-
         };
-
     }
-
-
     wp_die();
 }
 

@@ -389,7 +389,7 @@ add_action('add_meta_boxes', function() {
 
 function rb_register_styles() {
 
-	wp_enqueue_style( 'app-style',  get_stylesheet_directory_uri() . '/assets/css/rb-styles.css', array(), '1.1.8' );
+	wp_enqueue_style( 'app-style',  get_stylesheet_directory_uri() . '/assets/css/rb-styles.css', array(), '1.1.9' );
     wp_enqueue_style( 'swiper-style',  get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css' );
 	wp_enqueue_style( 'popup-style',  get_stylesheet_directory_uri() . '/assets/css/magnific-popup.css' );
 	wp_enqueue_style( 'fancybox-style',  get_stylesheet_directory_uri() . '/assets/css/fancybox.min.css' );

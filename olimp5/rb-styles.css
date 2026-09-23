@@ -12277,14 +12277,18 @@ div.rb-mobile-menu-buttons {
 	align-items: center;
 }
 .rew_and_info .rb-doctors-page__education.infobloks .rb-doctors-page__education-wrap{max-width: 300px;}
-/* .rb-doctors__spec-fio {
-	margin: 0 -24px;
-  padding: 0 24px;
-	width: calc(100% + 24px * 2);
-} */
 .single-doctors-education_hide .rb-doctors-page__education-wrap {
 	overflow: hidden;
 	transition: max-height .5s ease-in-out;
+}
+.single-doctors-education_hide .rb-doctors-page__education-wrap::before {
+	content: "";
+	position: absolute;
+	bottom: 90px;
+	left: 0;
+	right: 0;
+	height: 15px;
+	background: linear-gradient(to top, #ffffff 0%, transparent 100%);
 }
 .single-doctors-education_read {
 	position: absolute;

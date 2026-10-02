@@ -626,3 +626,6 @@ Author: RB
     font-size: 16px;
   }
 }
+.fancybox__container {
+	z-index: 10500;
+}

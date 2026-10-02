@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-<main class="rb-container privacy">
+<main class="rb-container privacy" data-calltouch-off>
     <div class="title title__main"><?php the_title(); ?></div>
 
         <div class="delivery delivery_offset">

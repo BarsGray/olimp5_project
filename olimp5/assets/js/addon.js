@@ -1679,7 +1679,7 @@
     }
 
     programms_cat_items.forEach(tab => {
-        tab.addEventListener('click', () => programms_url_update(this) );
+        tab.addEventListener('click', function () { programms_url_update(this); });
         if (termId && termId == tab.dataset.termid) tab.click();
     });
     // =====================================================================================

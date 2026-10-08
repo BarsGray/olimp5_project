@@ -1662,4 +1662,26 @@
     });
 
 
+    
+    // ======== изменение URL по фильтру и активация фильтра по URL ========================
+    const programms_cat_items = document.querySelectorAll('.rb-programms_cat--item');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const termId = urlParams.get('termid');
+
+    function programms_url_update(item) {
+        let tabId = item.dataset.termid;
+
+        let url = new URL(window.location.href);
+        url.searchParams.set('termid', tabId);
+
+        history.pushState({}, '', url);
+    }
+
+    programms_cat_items.forEach(tab => {
+        tab.addEventListener('click', () => programms_url_update(this) );
+        if (termId && termId == tab.dataset.termid) tab.click();
+    });
+    // =====================================================================================
+
 })(jQuery)

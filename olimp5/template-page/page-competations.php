@@ -145,7 +145,7 @@ if ($anchor_menu) : ?>
             endif;
             if ( $rb_centers_items ) : 
        ?>       
-            <section class="rb-competations__block">
+            <section id="comp-competations_block" class="rb-competations__block">
                 <div class="rb-container">
                     <h2 class="rb-title rb-competations__block-title"><?php echo $rb_centers_title; ?></h2>
                     <ul class="rb-competations__block-items flex-wrap">
@@ -199,7 +199,7 @@ if ( !is_array($items) || empty($items) ) {
 ?>
 
 <?php if ( is_array($items) && !empty($items) ) : ?>
-<section class="rb-block rb-whou-is">
+<section id="comp-whou_is" class="rb-block rb-whou-is">
   <div class="">
     <?php if ( $whou_title ) : ?>
       <h2 class="rb-title"><?php echo esc_html($whou_title); ?></h2>

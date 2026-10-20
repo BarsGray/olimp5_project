@@ -930,6 +930,22 @@ Container::make( 'post_meta', 'О нас' )
                           <% } %>
                   ' ),
         ) )
+		        ->add_tab( __( 'Слайдер до / после' ), array(
+            Field::make( 'text', 'slider_before_after_title', 'Заголовок' ),
+            Field::make( 'complex', 'before_after_slides', 'Слайды' )
+                    ->set_layout( 'tabbed-vertical' )
+                    ->add_fields( 'slide', array(
+                        Field::make( 'text', 'before_after_slide_title', 'Заголовок' )->set_width( 50 ),
+                        Field::make( 'text', 'before_after_slide_link', 'Ссылка' )->set_width( 50 ),
+                        Field::make( 'image', 'before_after_slide_bg', 'Изображение' )->set_width( 20 ),
+                        Field::make( 'textarea', 'before_after_slide_text', 'Текст' )->set_width( 80 ),
+                    ) )
+                //     ->set_header_template( '
+                //           <% if (before_after_slide_title) { %>
+                //               <%- title %>
+                //           <% } %>
+                //   ' ),
+        ) )
         ->add_tab( __( 'Документы' ), array(
             Field::make( 'text', 'rb_services_documents_title', 'Документы - заголовок' ),
             Field::make( 'textarea', 'rb_services_documents_text', 'Документы - описание' ),

@@ -160,6 +160,31 @@ if (!empty($whou_items)) : ?>
     </section>
 <?php endif; ?>
 <!-- Конец блока Что это такое? -->
+<?php
+	$before_after_slides = carbon_get_post_meta(get_the_ID(), 'before_after_slides');
+	$slider_before_after_title = carbon_get_post_meta(get_the_ID(), 'slider_before_after_title');
+	if (!empty($before_after_slides)) : ?>
+		<div class="section_slider_before_after">
+			<div class="rb-container">
+				<div class="rb-page-header">
+					<h2><?php echo $slider_before_after_title; ?></h2>
+					<div class="before_after_btns">
+						<div class="before_after_next"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" transform="matrix(-1 0 0 1 32 0)" fill="#F3951D"></rect><path d="M13 22L19.5 16L13.5 10" stroke="white"></path></svg></div>
+						<div class="before_after_prev"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F3951D"></rect><path d="M19 22L12.5 16L18.5 10" stroke="white"></path></svg></div>
+					</div>
+				</div>
+				<div class="slider_before_after swiper">
+					<div class="swiper-wrapper">
+						<?php foreach ($before_after_slides as $item): ?>
+							<div class="slider_before_after_slide swiper-slide">
+								<a href="<?php echo $item['before_after_slide_link'] ?: '#'; ?>"><?php echo wp_get_attachment_image($item['before_after_slide_bg'],'full'); ?></a>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
 			<!-- Начало блока услуг -->
 <?php
 $current_post_id = get_queried_object_id();

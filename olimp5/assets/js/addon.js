@@ -1683,5 +1683,24 @@
         if (termId && termId == tab.dataset.termid) tab.click();
     });
     // =====================================================================================
+    if ( $('.slider_before_after').length ) {
+        eventsSlider = new Swiper(".slider_before_after", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                850: {
+                    slidesPerView: 3,
+                },
+                450: {
+                    slidesPerView: 2,
+                },
+            },
+        });
+
+    }
 
 })(jQuery)

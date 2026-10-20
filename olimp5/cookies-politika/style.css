@@ -1,0 +1,27 @@
+body {
+  background-color: #004c48;
+}
+.index_links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-top: 3px solid #8d8d8d;
+  border-bottom: 3px solid #8d8d8d;
+}
+a {
+  color: #8d8d8d;
+  transition: color .3s ease-in-out;
+}
+a:hover {
+  color: #ccc;
+}
+footer .container {
+  border-top: 3px solid #8d8d8d;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  color: #ccc;
+}

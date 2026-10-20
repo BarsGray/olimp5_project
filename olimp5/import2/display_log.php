@@ -29,48 +29,64 @@
   // }
 //=================================================================================
 
-$products = get_posts([
-    'post_type'      => 'center-services',
-    'post_status'    => 'any',
-    'posts_per_page' => -1,
-    'meta_key'       => '_rb_serv_code',
-    'orderby'        => 'meta_value',
-    'order'          => 'ASC',
-]);
+// $products = get_posts([
+//     'post_type'      => 'center-services',
+//     'post_status'    => 'any',
+//     'posts_per_page' => -1,
+//     'meta_key'       => '_rb_serv_code',
+//     'orderby'        => 'meta_value',
+//     'order'          => 'ASC',
+// ]);
 
-$grouped = [];  
+// $grouped = [];  
 
-foreach ($products as $product) {
-  $code = get_post_meta($product->ID, '_rb_serv_code', true);
+// foreach ($products as $product) {
+//   $code = get_post_meta($product->ID, '_rb_serv_code', true);
 
-  // Пропускаем пустые коды
-  if ($code === '') continue;
+//   // Пропускаем пустые коды
+//   if ($code === '') continue;
 
-  $grouped[$code][] = [
-    'ID'    => $product->ID,
-    'title' => $product->post_title,
-  ];
-}
+//   $grouped[$code][] = [
+//     'ID'    => $product->ID,
+//     'title' => $product->post_title,
+//   ];
+// }
 
-// Выводим только коды, которые встречаются больше одного раза
-foreach ($grouped as $code => $items) {
+// // Выводим только коды, которые встречаются больше одного раза
+// foreach ($grouped as $code => $items) {
   
-  if (count($items) > 1) {
-    // echo '<h3>Код: ' . esc_html($code) . '</h3>';
-    add_log('//=================================================================================');
-    add_log("Код: $code");
+//   if (count($items) > 1) {
+//     // echo '<h3>Код: ' . esc_html($code) . '</h3>';
+//     add_log('//=================================================================================');
+//     add_log("Код: $code");
     
-    foreach ($items as $item) {
-      // echo 'ID: ' . $item['ID'] . ' — ' . esc_html($item['title']) . '<br>';
-      add_log("ID: {$item['ID']} — {$item['title']}");
-    }
+//     foreach ($items as $item) {
+//       // echo 'ID: ' . $item['ID'] . ' — ' . esc_html($item['title']) . '<br>';
+//       add_log("ID: {$item['ID']} — {$item['title']}");
+//     }
     
-    // echo '<hr>';
-  }
-}
+//     // echo '<hr>';
+//   }
+// }
 
 
 //=================================================================================
-// echo '<pre>';
-// print_r(get_post_meta(874));
-// echo '</pre>';
+echo '<pre>';
+print_r(get_post_meta(874));
+echo '</pre>';
+
+$meta_data = $wpdb->get_results(
+  $wpdb->prepare(
+    "SELECT meta_id, meta_key, meta_value
+    FROM {$wpdb->prefix}postmeta
+    WHERE post_id = %d",
+    874
+  ),
+  ARRAY_A
+);
+
+foreach ($meta_data as $meta) {
+  echo 'ID поля: ' . $meta['meta_id'] . '<br>';
+  echo 'Название поля: ' . $meta['meta_key'] . '<br>';
+  echo 'Значение: ' . $meta['meta_value'] . '<br><br>';
+}

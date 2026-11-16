@@ -13,7 +13,7 @@
 	}
 	add_log('start');
 	
-	// exit;
+	exit;
 	
 	$xml_pricelist=DOCUMENT_ROOT.'/import2/ckz_pricelist_export_'.date('d.m.Y').'.xml';
 	if(file_exists($xml_pricelist)){
@@ -22,15 +22,19 @@
 		$pricelist_data=$xml_pricelist_data->ROW;
 		if(isset($xml_pricelist_data->ROW) && count($pricelist_data)>0){
 			foreach($pricelist_data as $price_item){
-				$post_id_db=$wpdb->get_var('SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_key="_rb_serv_code" AND meta_value="'.(string)$price_item->code_real.'"');
-				if(empty($post_id_db))
-					$post_id_db=$wpdb->get_var('SELECT ID FROM '.$wpdb->prefix.'posts WHERE post_title="'.(string)$price_item->text.'" AND post_type="center-services" AND post_status="publish"');
-				if(!empty($post_id_db))
-					$wpdb->update(
-						$wpdb->prefix.'postmeta',
-						array('meta_value' => (string)$price_item->code_real),
-						array('meta_key' => '_rb_serv_code','post_id' => (int)$post_id_db)
-					);
+				$post_ids_db=$wpdb->get_col('SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_key="_rb_serv_code" AND meta_value="'.(string)$price_item->code_real.'"');
+
+				foreach($post_ids_db as $post_id_db) {
+					if(empty($post_id_db)) continue;
+						// $post_id_db=$wpdb->get_var('SELECT ID FROM '.$wpdb->prefix.'posts WHERE post_title="'.(string)$price_item->text.'" AND post_type="center-services" AND post_status="publish"');
+					if(!empty($post_id_db))
+						$wpdb->update(
+							$wpdb->prefix.'postmeta',
+							array('meta_value' => (string)$price_item->price_4078),
+							// array('meta_key' => '_rb_serv_code','post_id' => (int)$post_id_db)
+							array('meta_key' => '_rb_serv_price','post_id' => (int)$post_id_db)
+						);
+				}
 			}
 		}
 	} else {

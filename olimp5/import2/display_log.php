@@ -18,7 +18,7 @@
   //   'meta_query'     => [
   //     [
   //       'key'     => '_rb_serv_code',
-  //       'value'   => 'ДМСЭНД1072',
+  //       'value'   => 'СТА0033',
   //       'compare' => '=',
   //     ],
   //   ],
@@ -26,8 +26,13 @@
 
   // foreach ($products as $product) {
   //   echo $product->ID . ' — ' . esc_html($product->post_title) . '<br>';
+
+  //   echo '<pre>';
+  //   print_r(get_post_meta($product->ID));
+  //   echo '</pre>';
   // }
 //=================================================================================
+// Выводим только коды, которые встречаются больше одного раза
 
 $products = get_posts([
     'post_type'      => 'center-services',

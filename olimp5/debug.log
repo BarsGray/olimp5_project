@@ -1,0 +1,11 @@
+[10-Nov-2026 08:57:50 UTC] PHP Notice:  Функция WP_Styles::add вызвана <strong>неправильно</strong>. Стиль с дескриптором "main-style" был поставлен в очередь с незарегистрированными зависимостями: fancybox. Дополнительную информацию можно найти на странице <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">&laquo;Отладка в WordPress&raquo;</a>. (Это сообщение было добавлено в версии 6.9.1.) in /home/c/ch29335/olimp5.ru/public_html/wp-includes/functions.php on line 6260
+[10-Nov-2026 08:57:50 UTC] PHP Deprecated:  Функция seems_utf8 с версии 6.9.0 <strong>считается устаревшей</strong>! Используйте wp_is_valid_utf8(). in /home/c/ch29335/olimp5.ru/public_html/wp-includes/functions.php on line 6260
+[10-Nov-2026 08:57:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function rb_get_current_page_number() in /home/c/ch29335/olimp5.ru/public_html/wp-content/themes/olimp5/taxonomy-promo-cat.php:37
+Stack trace:
+#0 /home/c/ch29335/olimp5.ru/public_html/wp-includes/template-loader.php(132): include()
+#1 /home/c/ch29335/olimp5.ru/public_html/wp-blog-header.php(19): require_once('/home/c/ch29335...')
+#2 /home/c/ch29335/olimp5.ru/public_html/index.php(17): require('/home/c/ch29335...')
+#3 {main}
+  thrown in /home/c/ch29335/olimp5.ru/public_html/wp-content/themes/olimp5/taxonomy-promo-cat.php on line 37
+[10-Nov-2026 08:57:54 UTC] PHP Notice:  Функция WP_Styles::add вызвана <strong>неправильно</strong>. Стиль с дескриптором "main-style" был поставлен в очередь с незарегистрированными зависимостями: fancybox. Дополнительную информацию можно найти на странице <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">&laquo;Отладка в WordPress&raquo;</a>. (Это сообщение было добавлено в версии 6.9.1.) in /home/c/ch29335/olimp5.ru/public_html/wp-includes/functions.php on line 6260
+[10-Nov-2026 08:57:54 UTC] PHP Deprecated:  Функция seems_utf8 с версии 6.9.0 <strong>считается устаревшей</strong>! Используйте wp_is_valid_utf8(). in /home/c/ch29335/olimp5.ru/public_html/wp-includes/functions.php on line 6260

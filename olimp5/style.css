@@ -546,7 +546,7 @@ Author: RB
   border-bottom: 1px solid rgba(66, 86, 125, 0.2);
   margin-bottom: 80px;
 }
-
+.wp-block-group .rb-links {margin: 0;}
 .rb-links a {
   text-decoration: none;
   transition: all 0.4s ease;

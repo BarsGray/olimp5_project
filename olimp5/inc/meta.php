@@ -749,6 +749,8 @@ add_action('wp_head', function () {
     $date_published = get_the_date('c', $post_id);
     $date_modified  = get_the_modified_date('c', $post_id);
 
+    $author = rb_get_post_author_data($post_id);
+
     $data = [
         '@context'      => 'https://schema.org',
         '@type'         => 'Article',
@@ -756,10 +758,29 @@ add_action('wp_head', function () {
         'description'   => $description,
         'datePublished' => $date_published,
         'dateModified'  => $date_modified,
-        'author'        => [[
+        // 'author'        => [[
+        //     '@type' => 'Organization',
+        //     'name'  => 'ЦКЗ «Олимп Пять»',
+        // ]],
+        'author' => [
+            '@type'    => 'Person',
+            'name'     => $author['name'],
+            'jobTitle' => $author['area'],
+            'url'      => $author['link'],
+            'worksFor' => [
+                '@type' => 'Organization',
+                'name'  => 'Olimp5',
+            ],
+        ],
+        'publisher' => [
             '@type' => 'Organization',
-            'name'  => 'ЦКЗ «Олимп Пять»',
-        ]],
+            'name'  => 'Olimp5',
+            'url'   => 'https://olimp5.ru/',
+            'logo'  => [
+                '@type' => 'ImageObject',
+                'url'   => 'https://olimp5.ru/wp-content/uploads/2023/08/logo.png',
+            ],
+        ],
     ];
 
     if (!empty($image)) {

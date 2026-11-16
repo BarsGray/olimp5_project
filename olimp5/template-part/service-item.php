@@ -27,7 +27,8 @@ $content = 	$rb_services_desc = get_post_meta( $service_id, '_rb_services_brief_
       <?php endif; ?>
 
       <?php if ($rb_services_checkbox): ?>
-        <a href="<?php echo esc_url($permalink); ?>" class="rb-service__item-btn rb-button__orange">Перейти</a>
+        <?php /* <a href="<?php echo esc_url($permalink); ?>" class="rb-service__item-btn rb-button__orange">Перейти</a> */ ?>
+        <span class="rb-service__item-btn rb-button__orange">Перейти</span>
       <?php else: ?>
         <span class="rb-service__item-btn rb-button__orange js-open-modal"
               data-doctors=""

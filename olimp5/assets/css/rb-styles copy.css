@@ -744,6 +744,9 @@ main {
 	font-style: normal;
 	font-weight: 400;
 }
+.rb-main__slider .rb-container {
+	max-width: 1360px;
+}
 .rb-container .col-2 {
 	flex-basis: 16.66667%;
 	max-width: 16.66667%;
@@ -6675,6 +6678,16 @@ a.rb-main__slide-wrap-link {
 	border-radius: 12px;
 	height: 450px;
 }
+.rb-main__slider .rb-main__slide {
+	border-radius: 30px;
+	overflow: hidden;
+	box-shadow: unset;
+	aspect-ratio: 1.15;
+	height: unset;
+}
+/* @media (max-width: 1100px) {
+	
+} */
 .rb-main__slide .rb-main__slide--info,
 .rb-main__slide .rb-main__slide--image {
 	width: 100%;

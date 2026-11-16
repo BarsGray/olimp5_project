@@ -744,6 +744,9 @@ main {
 	font-style: normal;
 	font-weight: 400;
 }
+.rb-container {
+	max-width: 1360px;
+}
 .rb-container .col-2 {
 	flex-basis: 16.66667%;
 	max-width: 16.66667%;
@@ -2477,6 +2480,7 @@ div.title-search-result {
 }
 
 /* Блок Программы (slider)*/
+
 .rb-programs__all {
 	position: relative;
 	margin-top: 60px;
@@ -2573,6 +2577,10 @@ div.title-search-result {
 	display: block;
 	margin-bottom: 8px;
 }
+.sl-swiper-prog .swiper-slide {height: auto;}
+.sl-swiper-prog .rb-program__item {height: 100%;}
+.sl-swiper-prog .swiper-wrapper {padding-bottom: 20px;}
+.sl-swiper-prog.swiper {padding: 0 10px;}
 
 /**MARKET**/
 
@@ -2949,6 +2957,7 @@ p.rb-about__clinics-item--content{
 .rb-services__list .rb-services__serv {
 	width: calc( 50% - 10px );
 }
+
 .rb-services__serv-text,
 .rb-services__serv-img {
 	width: 50%;
@@ -2985,6 +2994,10 @@ p.rb-about__clinics-item--content{
 	color: #FFFFFF;
 	transition: all 0.3s;
 }
+.sl-swiper-serv.swiper {padding: 0 10px 20px;}
+.sl-swiper-serv .swiper-slide {height: auto;}
+.sl-swiper-serv .rb-service__item-title {height: 100%;}
+.sl-swiper-serv .rb-service__item {height: 100%;}
 .rb-services__serv-desc,
 .rb-services__serv-desc p {
 	font-family: 'Manrope';
@@ -5777,7 +5790,7 @@ form.rb-main__form .rb-main__form--item {
 
 	.rb-services__serv .rb-services__serv-text {
 		height: auto;
-	 min-height:auto;
+		min-height:auto;
 		border-radius: 12px 12px 0 0;
 	}
 	.rb-services__serv .rb-services__serv-img,
@@ -5816,7 +5829,6 @@ form.rb-main__form .rb-main__form--item {
 		margin: auto 0 !important;
 		padding-right: 0;
 	}
-
 	/**SCHOOL**/
 
 	.rb-school__top-desc {
@@ -6674,6 +6686,15 @@ a.rb-main__slide-wrap-link {
 	box-shadow: 1px 1px 18px #e5e5e5;
 	border-radius: 12px;
 	height: 450px;
+	/* aspect-ratio: 1; */
+}
+.rb-main__slide {
+	border-radius: 30px;
+	overflow: hidden;
+	box-shadow: unset;
+	aspect-ratio: 1.15;
+	height: unset;
+	max-height: 360px;
 }
 .rb-main__slide .rb-main__slide--info,
 .rb-main__slide .rb-main__slide--image {
@@ -6801,7 +6822,8 @@ a.rb-main__slide-wrap-link {
 
 @media screen and (max-width:1320px) {
 	.rb-main__slide {
-		 box-shadow: 1px 1px 18px #ffffff;
+		box-shadow: 1px 1px 18px #ffffff;
+		max-height: 560px;
 	}
 }
 
@@ -7879,6 +7901,21 @@ form .rb-main__form-bottom--inputs .rb-main__form--item:last-child {
 	margin-bottom: 0;
 	white-space: nowrap;
 }
+.sl-swiper-spec .swiper-slide {
+	height: auto;
+}
+.sl-swiper-spec .rb-doctors__spec-info {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.sl-swiper-spec .swiper-wrapper {
+	padding-bottom: 20px;
+}
+.sl-swiper-spec .rb-doctors__spec-occup {
+	flex: 1 1 0;
+}
+.sl-swiper-spec.swiper {padding: 0 10px;}
 
 @media screen and (max-width:767px) {
 	.rb-doctors .rb-doctors__spec-list .rb-doctors__spec-item,
@@ -9545,6 +9582,9 @@ div.search-page-params {
 
 /*page sanatorium*/
 
+.rb-calc .rb-title {
+	margin-bottom: 60px;
+}
 .rb-calc__list {
 	margin: 60px 0 50px;
 }
@@ -9674,6 +9714,9 @@ div.search-page-params {
 	padding: 5px 8px;
 	justify-content: space-between;
 }
+.sanatorium__selector.in_cheack {
+	width: 45px;
+}
 .rb-calc__form-section .sanatorium__selector input {
 	border: none;
 	width: 100%;
@@ -9685,6 +9728,44 @@ div.search-page-params {
 	line-height: 27px;
 	display: flex;
 	color: #000000;
+}
+.sanatorium__selector_cheack {position: relative;width: 35px;border-radius: 5px;}
+.sanatorium__selector_cheack::after,.sanatorium__selector_cheack::before {
+	content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: inherit;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #161616;
+  border-radius: 5px;
+  background: #fff;
+  transition: all 0.1s ease;
+	transform: translate(-50%,-50%);
+}
+.sanatorium__selector_cheack::after {
+	content: "";
+  position: absolute;
+  left: 11px;
+  top: 6px;
+  width: 7px;
+  height: 11px;
+  border: 1px solid #161616;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: all 0.1s ease;
+  border-radius: 0;
+}
+input[type="radio"].sanatorium__selector--input_checkbox:checked + span::after {
+	transform: rotate(45deg) scale(1);
+}
+input[type="radio"] {
+	position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 .sanatorium__selector--name {
 	font-family: 'Manrope';
@@ -10818,6 +10899,11 @@ form#rb-video-form .rb-main__form-bottom--inputs .rb-main__form--item-label inpu
 	max-height: 90vh;
 }
 
+.sl-swiper-pop.swiper {padding: 0 10px 20px;}
+.sl-swiper-pop .swiper-slide {height: auto;}
+.sl-swiper-pop .rb-service__item-title {height: 100%;}
+.sl-swiper-pop .rb-service__item {height: 100%;}
+
 @media screen and (max-width:767px) {
 	.rb-sert .rb-service__top-text {
 		 margin-top: 32px;
@@ -10940,6 +11026,14 @@ li.rb-links--last a:hover {
 	background-color: #46547780;
 	color: #fff;
 }
+
+.feedback-swiper .feedback-img,
+.feedback-swiper .feedback__list,
+.feedback-swiper .feedback-item,
+.feedback-swiper .swiper-autoheight .swiper-slide {
+	height: 100%;
+}
+.feedback-img img {height: 100%; object-fit: cover;}
 
 @media screen and (max-width:767px) {
 	.rb-links--content {

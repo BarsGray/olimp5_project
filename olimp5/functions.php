@@ -389,12 +389,12 @@ add_action('add_meta_boxes', function() {
 
 function rb_register_styles() {
 
-	wp_enqueue_style( 'app-style',  get_stylesheet_directory_uri() . '/assets/css/rb-styles.css', array(), '1.1.12' );
+	wp_enqueue_style( 'app-style',  get_stylesheet_directory_uri() . '/assets/css/rb-styles.css', array(), '1.1.22' );
     wp_enqueue_style( 'swiper-style',  get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css' );
 	wp_enqueue_style( 'popup-style',  get_stylesheet_directory_uri() . '/assets/css/magnific-popup.css' );
 	wp_enqueue_style( 'fancybox-style',  get_stylesheet_directory_uri() . '/assets/css/fancybox.min.css' );
 	wp_enqueue_style( 'main-style', get_stylesheet_uri(), array( 'app-style', 'swiper-style', 'popup-style', 'fancybox' ) );
-	wp_enqueue_style( 'top-main-style',  get_stylesheet_directory_uri() . '/assets/css/top-main-style.css', array(), '1.1.9' );
+	wp_enqueue_style( 'top-main-style',  get_stylesheet_directory_uri() . '/assets/css/top-main-style.css', array(), '1.1.17' );
 
 
 	wp_enqueue_script( 'jquery' );
@@ -416,7 +416,7 @@ function rb_register_styles() {
 	wp_enqueue_script( 'sticky', get_stylesheet_directory_uri() . '/assets/js/sticksy.min.js', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'swiper', get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/js/fancybox.min.js', array( 'jquery' ), null, true );
-	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/assets/js/addon.js', array( 'sticky', 'swiper', 'inputmask', 'popup', 'fancybox' ), '1.0.10', true );
+	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/assets/js/addon.js', array( 'sticky', 'swiper', 'inputmask', 'popup', 'fancybox' ), '1.0.14', true );
 	// wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/assets/js/addon.js', array( 'sticky', 'swiper', 'inputmask', 'popup', 'fancybox' ), null, true );
 
 
@@ -2308,3 +2308,18 @@ add_action('init', function() {
 
     update_option('events_archive_updated', $now);
 });
+
+// Якорное меню
+function show_anchor_menu() {
+    $anchor_menu = carbon_get_the_post_meta('rb_anchor_menu');
+    if (empty($anchor_menu)) return '';
+    ob_start(); ?>
+    <div class="rb-links">
+        <?php foreach ($anchor_menu as $item): ?>
+            <a href="<?php echo esc_url($item['anchor']); ?>"><?php echo esc_html($item['title']); ?></a>
+        <?php endforeach; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('anchor_menu', 'show_anchor_menu');

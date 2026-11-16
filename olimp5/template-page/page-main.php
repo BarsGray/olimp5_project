@@ -25,28 +25,39 @@ if ( $slider_query->have_posts() ) :
 
 ?>
 	<!-- Swiper -->
-	<section class="rb-main__slider rb-slider">
-		<div class="rb-container">
-			<div class="swiper" id="rbSwiper">
-				<div class="swiper-wrapper">
-					<?php
-
-						while( $slider_query->have_posts() ) {
+	<?php if (!is_page(30361)): ?>
+		<section class="rb-main__slider rb-slider">
+			<div class="rb-container">
+				<div class="swiper" id="rbSwiper">
+					<div class="swiper-wrapper">
+						<?php while( $slider_query->have_posts() ) {
 							$slider_query->the_post();
-
 							get_template_part( 'template-part/main', 'slider-item' );
-
-						}
-
-					?>
+						} ?>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
 				</div>
-
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
+				<div class="swiper-pagination"></div>
 			</div>
-			<div class="swiper-pagination"></div>
-		</div>
-	</section>
+		</section>
+  <?php elseif(is_page(30361)): ?>
+		<section class="rb-main__slider_test rb-main__slider rb-slider">
+			<div class="rb-container">
+				<div class="swiper" id="rbSwiper_test">
+					<div class="swiper-wrapper">
+						<?php if ( $slider_query->have_posts() ) {
+							$slider_query->the_post();
+							get_template_part( 'template-part/main', 'slider-item_test' );
+						} ?>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+	<?php endif; ?>
 
 <?php 
 	endif; 
@@ -343,7 +354,7 @@ rb_main_builder_render('after_doctors');
 			</section>
 
 		<?php endif; ?>
-
+<!-- Конструктор: после новостей -->
 <?php
 // Конструктор: после новостей
 rb_main_builder_render('after_news');
@@ -355,8 +366,9 @@ rb_main_builder_render('after_news');
 			'post_type' => 'bio-market22',
 			'posts_per_page' => -1
 		)
-	);
-
+	); ?>
+<!-- Конструктор: перед биомаркетом -->
+	<?php
 	// Конструктор: перед биомаркетом
 	rb_main_builder_render('before_biomarket');
 

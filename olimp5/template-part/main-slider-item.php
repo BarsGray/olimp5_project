@@ -25,9 +25,7 @@
  $rb_slider_btn_text = get_post_meta( get_the_ID(), '_rb_slider_btn_text', true ) ?: 'Перейти';
 
 if ( $rb_slider_utm_link ) {
-
 	 $rb_slider_link =  $rb_slider_link . '?utm_source=' . $rb_slider_utm_link;
-
 }
 
 

@@ -13,7 +13,7 @@
 	}
 	add_log('start');
 	
-	exit;
+	// exit;
 	
 	$xml_pricelist=DOCUMENT_ROOT.'/import2/ckz_pricelist_export_'.date('d.m.Y').'.xml';
 	if(file_exists($xml_pricelist)){
